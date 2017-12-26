@@ -11,9 +11,9 @@ import matplotlib.pyplot as plt
 from sklearn.cluster import DBSCAN
 from sklearn.decomposition import PCA
 
-x,y=datasets.load_iris(return_X_y=True)
-pca=PCA(n_components=2)
-re_x=pca.fit_transform(x)
+x,y=datasets.load_iris(return_X_y=True) #返回元祖
+pca=PCA(n_components=2)             #降至2维
+re_x=pca.fit_transform(x)           #对鸢尾花的data进行训练
 dic={}
 dicc={}
 for i in range(y.size):
