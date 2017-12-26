@@ -11,26 +11,15 @@ import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 
       
-p=pd.read_csv('city.txt',header=None,encoding='gb18030')
-##data,cityname,data1=p.ix[:,1:],p.ix[:,0],p.ix[:,1:].sum(axis=1)
-##km=KMeans(n_clusters=4)
-##label=km.fit_predict(data)
-##ex=np.sum(km.cluster_centers_,axis=1)
-##cc=[]
-##[cc.append([]) for i in range(ex.shape[0])]
-##for i in range(len(cityname)):
-##    cc[label[i]].append(cityname[i])
-##for i in range(len(cc)):
-##    print('ex=',ex[i])
-##    print(cc[i])
+p=pd.read_csv('city.txt',header=None,encoding='gb18030')    #pd读取csv数据
 
 def f(cl):
     print(chr(11)*77)
     print('当前cl={}'.format(cl))
-    data,cityname,data1=p.ix[:,1:],p.ix[:,0],p.ix[:,1:].sum(axis=1)
-    km=KMeans(n_clusters=cl)
-    label=km.fit_predict(data)
-    ex=np.sum(km.cluster_centers_,axis=1)
+    data,cityname,data1=p.ix[:,1:],p.ix[:,0],p.ix[:,1:].sum(axis=1)     #data是数据，cityname是标签？
+    km=KMeans(n_clusters=cl)              #创建kmeans对象
+    label=km.fit_predict(data)            #训练data
+    ex=np.sum(km.cluster_centers_,axis=1)       #对km.cluster_centers_横向求和
     cc=[]
     [cc.append([]) for i in range(ex.shape[0])]
     for i in range(len(cityname)):
