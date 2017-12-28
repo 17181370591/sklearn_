@@ -13,6 +13,7 @@ from sklearn.metrics import classification_report         #导入预测结果评
 from sklearn.linear_model import Ridge          #调用岭回归模型
 
 #可以避免过拟合？？？
+#使用回归里的车流量数据
 data=pd.read_csv('1.txt',header=None)
 x=data.ix[:,1:4]            #读取参数，一共4个
 y=data.ix[:,5]              #读取车流量
