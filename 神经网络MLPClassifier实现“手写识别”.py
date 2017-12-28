@@ -47,6 +47,7 @@ train_dataSet,train_hwLabels=readDataSet('trainingDigits')  #读取用作train�
 clf=(hidden_layer_sizes=(100,),activation='logistic',
                   solver='adam',learning_rate_init=0.01,max_iter=500)
             #创建MLPClassifier，参数完全看不懂？？？
+            #learning_rate_init（学习率）较小时，需要设置较大的max_iter（最大迭代次数），否则不会收敛
 clf.fit(train_dataSet,train_hwLabels)       #训练
 
 dataSet,hwLabels=readDataSet('testDigits')      #读取用作test的所有数据
