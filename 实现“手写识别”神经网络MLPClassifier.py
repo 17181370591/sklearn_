@@ -15,6 +15,9 @@ from sklearn.neural_network import MLPClassifier
 f1=r'C:\Users\Administrator\Desktop\testDigits\0_0.txt'
 
 #使用手写数字识别的数据
+#mlp在数据较小时容易出现过拟合，效果不如knn
+#mlp对参数很敏感，参数设置时不当mlp效果不好
+
 def img2vector(fn):
     fr=pd.read_csv(fn,header=None)
     return fr[0].map(lambda x:[i for i in x]).sum()
