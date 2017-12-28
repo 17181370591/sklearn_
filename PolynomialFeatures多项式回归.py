@@ -19,6 +19,7 @@ X=np.arange(dx.min(),dx.max()).reshape(-1,1)
 '''
 sklearn的多项式回归，实际上是先将变量X处理成多项式特征，然后使用线性模型
 学习多项式特征的参数
+使用回归里的房价数据
 '''
 
 poly_reg=sklearn.preprocessing.PolynomialFeatures(degree=2)             #degree表示生成2次多项式
