@@ -41,7 +41,7 @@ def readDataSet(path):
         dataSet[i]=img2vector(path+r'/'+filePath)
             #dataSet[i]的值是path+r'/'+filePath（完整名字）数据返回的1024的np.array
     return dataSet,hwLabels
-#
+
 t1=time.clock()
 train_dataSet,train_hwLabels=readDataSet('trainingDigits')  #读取用作train的所有数据
 clf=(hidden_layer_sizes=(100,),activation='logistic',
