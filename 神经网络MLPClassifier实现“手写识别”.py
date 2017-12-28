@@ -13,6 +13,8 @@ from sklearn.metrics import classification_report         #导入预测结果评
 from sklearn.linear_model import Ridge          #调用岭回归模型
 from sklearn.neural_network import MLPClassifier
 f1=r'C:\Users\Administrator\Desktop\testDigits\0_0.txt'
+
+#使用手写数字识别的数据
 def img2vector(fn):
     fr=pd.read_csv(fn,header=None)
     return fr[0].map(lambda x:[i for i in x]).sum()
