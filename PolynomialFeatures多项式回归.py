@@ -21,7 +21,7 @@ sklearn的多项式回归，实际上是先将变量X处理成多项式特征，
 学习多项式特征的参数
 '''
 
-poly_reg=sklearn.preprocessing.PolynomialFeatures(degree=2)
+poly_reg=sklearn.preprocessing.PolynomialFeatures(degree=2)             #degree表示生成2次多项式
 X_poly=poly_reg.fit_transform(dx)           #用dx生成多项式？
 lin_reg_2=linear_model.LinearRegression()
 lin_reg_2.fit(X_poly,dy)                #通过训练生成多项式的参数？
