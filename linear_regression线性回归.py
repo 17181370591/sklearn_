@@ -11,7 +11,7 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.preprocessing import Imputer   #导入预处理模块
 from sklearn.metrics import classification_report         #导入预测结果评估模块
 
-
+#好像使用回归里全国31省市的消费数据
 n=pd.read_csv('1.txt',header=None)
 minx,maxx=n[0].min(),n[0].max()         #确定横坐标的最小值和最大值
 X=np.arange(minx,maxx).reshape(-1,1)    #将所有x坐标保存成（-1,1）的数组
