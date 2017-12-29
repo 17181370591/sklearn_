@@ -19,8 +19,9 @@ def f(cl):
     data,cityname,data1=p.ix[:,1:],p.ix[:,0],p.ix[:,1:].sum(axis=1)     #data是数据，cityname是标签？
     km=KMeans(n_clusters=cl)              #创建kmeans对象
     label=km.fit_predict(data)            #训练data
+    print('label=',label)
     ex=np.sum(km.cluster_centers_,axis=1)       #对km.cluster_centers_横向求和
-    print(ex.shape)
+    print('ex.shape=',ex.shape)
     cc=[]
     [cc.append([]) for i in range(ex.shape[0])]
     for i in range(len(cityname)):
