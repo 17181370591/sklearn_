@@ -9,6 +9,7 @@ plt.figure()
 for i in range(len(ls)):
     ls[i].fit(x,y)
     print(ls[i].coef_,ls[i].intercept_)
+    print(ls[i].score(x,y))           #打分
     plt.subplot(221+i)
     plt.scatter(x,y)
     plt.xlabel('x')
@@ -22,6 +23,7 @@ s=(-10,-1,-0.1,-0.01,-0.001)
 rcv=linear_model.RidgeCV(alphas=s)      #一次测试多个岭回归，返回效果最好的岭回归
 rcv.fit(x,y)
 print(rcv.alpha_)           #效果最好的岭回归的alpha
+print(rcv.score(x,y))           #打分
 plt.scatter(x,y)
 plt.plot(x,rcv.predict(x),label='test')
 plt.show()
@@ -29,6 +31,7 @@ plt.show()
 las=linear_model.LassoCV(alphas=s)          #使用lassocv一次测试多个lasso
 las.fit(x,y)
 print(las.alpha_)           #效果最好的岭lasso
+print(las.score(x,y))           #打分
 plt.scatter(x,y)
 plt.plot(x,las.predict(x),label='test')
 plt.show()
