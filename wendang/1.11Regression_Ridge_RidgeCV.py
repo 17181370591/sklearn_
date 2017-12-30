@@ -16,10 +16,19 @@ for i in range(len(ls)):
     plt.plot(x,ls[i].predict(x),label='test')
     plt.legend('left upper')
 plt.show()
+
 s=(-10,-1,-0.1,-0.01,-0.001)
+
 rcv=linear_model.RidgeCV(alphas=s)      #一次测试多个岭回归，返回效果最好的岭回归
 rcv.fit(x,y)
 print(rcv.alpha_)           #效果最好的岭回归的alpha
 plt.scatter(x,y)
 plt.plot(x,rcv.predict(x),label='test')
+plt.show()
+
+las=linear_model.LassoCV(alphas=s)          #使用lassocv一次测试多个lasso
+las.fit(x,y)
+print(las.alpha_)           #效果最好的岭lasso
+plt.scatter(x,y)
+plt.plot(x,las.predict(x),label='test')
 plt.show()
